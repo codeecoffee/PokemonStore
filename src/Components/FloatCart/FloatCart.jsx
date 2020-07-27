@@ -17,13 +17,22 @@ const FloatCart = (props) => {
 
   return( 
     <div className="Cartcontainer">
-      <button className="closebtn" onClick={closeHandler}> close</button>
+      <div className="bttncontainer">
+        <button>Cart</button>
+        <button className="closebtn" onClick={closeHandler}> close</button>
+      </div>
       <div className="Cardscontainer">
-      <h1>Aqui!</h1>
-        
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
       </div> 
       <div className="total">
-        <h1>Total</h1>
+        <h1>Total: $40.99</h1>
+      </div>
+      <div className="checkout">
+        <button>checkout</button>
       </div>
 
     </div>

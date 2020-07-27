@@ -5,8 +5,13 @@
 }
 body{
   background-color: #DDD;
+  width: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 auto;
+ 
 }
 /* body{
   font-size: 10px;
@@ -15,11 +20,15 @@ body{
   background-color: #EEE ;
 } */
 .container{
+
+  margin: 20px auto;
+  padding-top: 20px;
   font-size: 18px;
   -webkit-font-smoothing: none;
   font-family: "pokemon-font", monospace;
+  background-color: indigo;
   
-  
+ 
   /* display: flex;
   flex-flow: row wrap;
   justify-content: center;

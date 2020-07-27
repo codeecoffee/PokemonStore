@@ -6,15 +6,16 @@
   grid-gap: 20px;
 } */
 
-.Cards{
+ .Cards{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
+
+
 }
 
 
-.loadmore{
+/* .loadmore{
   display: flex;
   justify-content: center;
-}
+}  */

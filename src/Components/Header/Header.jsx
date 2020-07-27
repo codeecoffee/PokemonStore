@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Search, FloatCart, Toggle} from '../index'
-
+import {Container, Row, Col }from 'react-bootstrap'
 import './style.css'
 import logo from '../../img/Header.png'
 
@@ -43,24 +43,22 @@ const Header = () => {
       }
     //
   return(
+ 
     <header className="container">
-      <div className="logo">
+      <div className="item logo">
         <img src={logo} alt="PokeStore"/>
       </div>
-      <Search
-        refreshFunction={updateSearch}
-      />
-      <div className="theme">
-        <button>Theme</button>
-        
+      <div className="searchbar">
+        <Search
+          refreshFunction={updateSearch}
+        />
       </div>
-      <div className="purchase">
+      <div className="bttnscontainer">
+        <button>Theme</button>
         {sideBar}
-        <Toggle click={openHandler}/>
-        
+          <Toggle click={openHandler}/>
       </div>
     </header>
-    
   )
 }
 

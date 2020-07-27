@@ -1,9 +1,10 @@
 .Cartcontainer{
-  /* position: relative;
-  background-color: gray;
-  height: 100vh; */
-  height: 100vh; /* 100% Full-height */
-  padding-left: 20px;
+  display:flex;
+  flex-direction: column;
+  height:80%;
+  /* height: 100vh; 100% Full-height */
+  padding-left: 10px;
+  padding-right: 10px;
   position: fixed; /* Stay in place */
   z-index: 200; /*puts it on top*/
   right: -100%; /*Hides it*/
@@ -12,6 +13,11 @@
   background-color: gray;
   padding-top: 60px; /* Place content 60px from the top */
   animation: slide-open 0.85s forwards;  
+
+  
+  display: flex;
+  flex-direction: column;
+
 }
 .Cartcontainer.close{
   right: 0;
@@ -20,11 +26,47 @@
 @keyframes slide-open{
   100%{ right: 0 }
 }
-
 @keyframes slide-close{
   100%{ right: -100% }
 }
 
+.Cardscontainer{
+  margin-top: 20px;
+  height: 70%;
+  background-color: khaki;
+}
+.Cartcontainer ul{
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.Cardscontainer ul li{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: lawngreen;
+}
+
+.bttncontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+  
+}
+.bttncontainer button{
+  margin-left: 90px;
+}
+.checkout{
+  align-self: flex-end;
+  width: 100%;
+  margin: auto 5px;
+}
+.total{
+  justify-content: flex-end;
+}
+.checkout button{
+  width: 100%;
+  padding: 20px;
+}
 /*
 TODO: 
 fix closing FloatCart

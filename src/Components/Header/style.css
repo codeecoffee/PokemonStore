@@ -1,15 +1,43 @@
-header .container{
+.container{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo img{
+  height: 75px;
+}
+.searchbar{
+  flex: 2;
+}
+.bttnscontainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+/* .container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
 }
-.logo{
-  width: 60%;
+.item{
+  width:200px;
+  margin: 10px;
+  padding-top: 20px;
 }
 .container img{
-  /* width: auto; */
-
+  width: 100%;
 }
+
+.searchbar{
+  flex: 2;
+
+} */
 /* header .container{
   width: 100vw;
   height: 80px;

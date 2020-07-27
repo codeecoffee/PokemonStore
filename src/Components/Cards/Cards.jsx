@@ -11,9 +11,9 @@ const Cards = ({pokemon}) => {
         (<Card key={pokemon.id} pokemon={pokemon}/>)
       )}
     </CardColumns>
-    <div className="loadmore">
+    {/* <div className="loadmore">
         <button>Load More </button>
-    </div>
+    </div> */}
     </>
   )
 }
