@@ -5,7 +5,8 @@
 }
 body{
   background-color: #DDD;
-
+  display: flex;
+  flex-direction: column;
 }
 /* body{
   font-size: 10px;

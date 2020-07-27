@@ -1,17 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-import style from './style.css'
-
-
+import './style.css'
 
 
-function Search ({handleInput}) {
+function Search (props) {
+
+  const [searched, setSearched] = useState("")
+  const onChangeSearch = (event)=>{
+    setSearched(event.currentTarget.value)
+    props.refreshFunction(event.currentTarget.value)
+  }
+
   return(
     <section className="searchbox-wrap">
       <input 
+        value={searched}
         type="text" 
         className="searchbox" 
-        onChange={handleInput}
+        onChange={onChangeSearch}
         placeholder="🔎 Look for your Pokemon Here "/>
     </section>
   )

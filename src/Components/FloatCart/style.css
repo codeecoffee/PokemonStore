@@ -1,0 +1,33 @@
+.Cartcontainer{
+  /* position: relative;
+  background-color: gray;
+  height: 100vh; */
+  height: 100vh; /* 100% Full-height */
+  padding-left: 20px;
+  position: fixed; /* Stay in place */
+  z-index: 200; /*puts it on top*/
+  right: -100%; /*Hides it*/
+  width: 400px;
+  color: white;
+  background-color: gray;
+  padding-top: 60px; /* Place content 60px from the top */
+  animation: slide-open 0.85s forwards;  
+}
+.Cartcontainer.close{
+  right: 0;
+  animation: slide-close 1.0s forwards;
+}
+@keyframes slide-open{
+  100%{ right: 0 }
+}
+
+@keyframes slide-close{
+  100%{ right: -100% }
+}
+
+/*
+TODO: 
+fix closing FloatCart
+https://www.youtube.com/watch?v=17g0QZXRfQk
+
+*/

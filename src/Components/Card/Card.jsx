@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap'
 import './style.css'
 
 const MoreDeets = ({pokemon:{pokemon:{name, url}}}) => {
-  console.log(name)
   function transformUrl(url){
     return Number(url.split('/')[6])
   }

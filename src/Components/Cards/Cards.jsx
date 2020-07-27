@@ -1,17 +1,20 @@
 import React from 'react'
-import Card from '../Card/Card'
+import { Card } from '../index'
 import {CardColumns} from 'react-bootstrap'
 import './style.css'
-const Cards = ({pokemon}) => {
-  console.log(pokemon)
-  return(
-  <CardColumns className="Cards">
-    {pokemon.slice(0, 50).map((pokemon)=>(
-      <Card pokemon={pokemon}/>
-      )
 
-    )}
-  </CardColumns>
+const Cards = ({pokemon}) => {
+  return(
+    <>
+    <CardColumns className="Cards">
+      {pokemon.slice(0, 50).map((pokemon)=>
+        (<Card key={pokemon.id} pokemon={pokemon}/>)
+      )}
+    </CardColumns>
+    <div className="loadmore">
+        <button>Load More </button>
+    </div>
+    </>
   )
 }
 
