@@ -8,15 +8,20 @@ import './index.css'
 
 const App = () => {
 
-  //cart 
-  const [product, setProduct] = useState([])
-  useEffect(()=>{
+  // //cart 
+  // const [product, setProduct] = useState([])
+  // useEffect(()=>{
 
-  },[])
+  // },[])
 
-  //cart
+  // //cart
   const [pokemon, setData] = useState([]);
  
+  //search
+  const search = (e) => {
+    if(e.key === "Enter"){}
+  }
+  //
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
@@ -26,12 +31,22 @@ const App = () => {
     };
     fetchData();
   }, []);
-  
+
+  const [purchase, setPurchase] = useState([])
+
+  function handlePurchase(name, price, img){
+    setPurchase([...purchase, {name, price, img}])
+  }
+  // useEffect(()=>{
+
+  // },[handlePurchase])
+  console.log("PURCHASE: ", purchase)
+
   return (
     <div className="container">
       <main>
-        <Header/>
-        <Cards pokemon={pokemon}/>
+        <Header purchase={purchase}/>
+        <Cards pokemon={pokemon} handlePurchase={handlePurchase}/>
       </main>
 
     </div>

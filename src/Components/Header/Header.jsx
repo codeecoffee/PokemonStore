@@ -4,7 +4,7 @@ import {Container, Row, Col }from 'react-bootstrap'
 import './style.css'
 import logo from '../../img/Header.png'
 
-const Header = () => {
+const Header = ({purchase}) => {
     //cart
     const [showCart, setShowCart] = useState(false)
     //
@@ -20,7 +20,7 @@ const Header = () => {
     }
     let sideBar
     if(showCart){
-      sideBar=<FloatCart close={closeHandler} cartcontainer={"Cartcontainer"}/>
+      sideBar=<FloatCart close={closeHandler} cartcontainer={"Cartcontainer"} purchase={purchase} insideCart={true}/>
     }
     //
     //cart

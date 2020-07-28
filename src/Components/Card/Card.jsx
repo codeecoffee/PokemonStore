@@ -2,24 +2,28 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './style.css'
 
-const MoreDeets = ({pokemon:{pokemon:{name, url}}}) => {
-  function transformUrl(url){
+const MoreDeets = ({handlePurchase, pokemon:{pokemon:{name, url}}}) => {
+  function getIdFromUrl(url){
     return Number(url.split('/')[6])
   }
+  let pokemonId = getIdFromUrl(url)
+
+  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
+  
   return(
     <div className="card-container">
         <Card style={{ width: '18rem' }}>
           <Card.Img 
             className="image"
             variant="top" 
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${transformUrl(url)}.png`} />
+            src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            R$ {(Math.random()*1000).toFixed(2)}
+            R$ {pokemonId}
           </Card.Text>
           
-          <Button variant="primary">Comprar</Button>
+          <Button onClick={()=>handlePurchase(name, pokemonId, img)}variant="primary">Comprar</Button>
         </Card.Body>
       </Card>
     </div>

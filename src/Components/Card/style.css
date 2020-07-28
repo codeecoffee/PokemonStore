@@ -13,6 +13,10 @@
   justify-content: center;
 }
 
+.card-container-teste{
+  flex-direction: row;
+}
+
 .card-container:hover{
   transform: scale(1.05);
 }

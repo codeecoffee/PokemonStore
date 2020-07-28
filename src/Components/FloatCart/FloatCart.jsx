@@ -4,17 +4,24 @@ import {CardRows} from 'react-bootstrap'
 
 import './style.css'
 
-const FloatCart = (props) => {
-  const [sidebarClass, setSidebarClass] = useState(props.Cartcontainer)
-
+const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
+  const [sidebarClass, setSidebarClass] = useState(Cartcontainer)
+  // console.log("insideCart ->", insideCart)
   const closeHandler = (e) =>{
     e.preventDefault()
     setSidebarClass("Cartcontainer close")
     setTimeout(()=>{
-      props.close()
+      close()
     },1000)
   }
-
+  // var total = total + purchase.map(pokemon=>(
+  //   pokemon.price
+  // ))
+  var total = purchase.reduce((sum,item)=>(sum=sum+item.price),0)
+  var quantityOfItems = purchase.length
+  console.log(`the quantity of items is ${quantityOfItems}`)
+  console.log(total)
+  console.log("DENTRO DO FLOAT: ", purchase)
   return( 
     <div className="Cartcontainer">
       <div className="bttncontainer">
@@ -23,13 +30,18 @@ const FloatCart = (props) => {
       </div>
       <div className="Cardscontainer">
         <ul>
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
+          {purchase.map(pokemon =>(
+              <div className="teste-teste">
+                <li>{pokemon.name}</li>
+                <li>{pokemon.price}</li>
+                <img alt={pokemon.name} src={pokemon.img}/>
+              </div>
+            )
+          )}
         </ul>
       </div> 
       <div className="total">
-        <h1>Total: $40.99</h1>
+        <h1>Total: R${total}</h1>
       </div>
       <div className="checkout">
         <button>checkout</button>
