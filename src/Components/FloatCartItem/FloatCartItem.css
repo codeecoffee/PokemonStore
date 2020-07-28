@@ -1,0 +1,33 @@
+.itemcontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding-bottom: 20px; */
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  background-color: teal;
+  /* width: 100%; */
+  border: #000 solid 1px;
+}
+/* .remove{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color:yellow;
+  padding: 10px 10px; 
+} */
+.removebttn{
+  display: inherit;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  /* align-self: flex-end; */
+  background-color: tomato;
+}
+.itemname{}
+.itemprice{
+  font-size: 30px;
+  align-self: center;
+}
+.itemimg{
+  border-right: #000 solid 1px;
+}

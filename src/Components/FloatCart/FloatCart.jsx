@@ -1,41 +1,46 @@
 import React, { useState } from 'react'
 import {CardRows} from 'react-bootstrap'
-
-
+import { FaShoppingCart, FaTimesCircle } from 'react-icons/fa'
+import {FloatCartItem} from '../'
 import './style.css'
 
 const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
-  const [sidebarClass, setSidebarClass] = useState(Cartcontainer)
+  const [cartContainerClass, setCartContainerClass] = useState(Cartcontainer)
   // console.log("insideCart ->", insideCart)
   const closeHandler = (e) =>{
     e.preventDefault()
-    setSidebarClass("Cartcontainer close")
+    setCartContainerClass("Cartcontainer close")
     setTimeout(()=>{
       close()
-    },1000)
+    },500)
   }
-  // var total = total + purchase.map(pokemon=>(
-  //   pokemon.price
-  // ))
+
   var total = purchase.reduce((sum,item)=>(sum=sum+item.price),0)
   var quantityOfItems = purchase.length
-  console.log(`the quantity of items is ${quantityOfItems}`)
-  console.log(total)
-  console.log("DENTRO DO FLOAT: ", purchase)
+
   return( 
     <div className="Cartcontainer">
-      <div className="bttncontainer">
-        <button>Cart</button>
-        <button className="closebtn" onClick={closeHandler}> close</button>
+      {/* <div className="bttncontainer"> */}
+      <div className="closecontainer">
+        <FaTimesCircle onClick={closeHandler}/>
       </div>
+        <div className="carticoncontainer">
+         <FaShoppingCart color="white" size="2rem"/>
+        </div>
+        
+        {/* <button className="closebtn" onClick={closeHandler}> close</button> */}
+     
+      {/* </div> */}
+
       <div className="Cardscontainer">
         <ul>
           {purchase.map(pokemon =>(
-              <div className="teste-teste">
-                <li>{pokemon.name}</li>
+              <>
+                <li><FloatCartItem pokemon={pokemon}/></li>
+                {/* <li>{pokemon.name}</li>
                 <li>{pokemon.price}</li>
-                <img alt={pokemon.name} src={pokemon.img}/>
-              </div>
+                <img alt={pokemon.name} src={pokemon.img}/> */}
+              </>
             )
           )}
         </ul>

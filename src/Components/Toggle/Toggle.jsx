@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 const Toggle =(props) => {
   return(
     <>
-      <FaShoppingCart id="toggle" onClick={props.click}></FaShoppingCart>
+      <FaShoppingCart color="white" id="toggle" onClick={props.click}></FaShoppingCart>
       {/* <button id="toggle" onClick={props.click}>Cart Toggle</button> */}
     </>
   )
