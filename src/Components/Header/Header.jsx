@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Search, FloatCart, Toggle} from '../index'
 import {Container, Row, Col }from 'react-bootstrap'
+
 import './style.css'
 import logo from '../../img/Header.png'
 

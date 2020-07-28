@@ -1,11 +1,14 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import "./style.css"
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const Toggle =(props) => {
   return(
-    <Fragment>
-      <button id="toggle" onClick={props.click}>Cart Toggle</button>
-    </Fragment>
+    <>
+      <FaShoppingCart id="toggle" onClick={props.click}></FaShoppingCart>
+      {/* <button id="toggle" onClick={props.click}>Cart Toggle</button> */}
+    </>
   )
 }
 
