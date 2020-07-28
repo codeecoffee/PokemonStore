@@ -1,7 +1,7 @@
 .Cartcontainer{
   display:flex;
   flex-direction: column;
-  height:80%;
+  min-height:80%;
   /* height: 100vh; 100% Full-height */
   padding-left: 10px;
   padding-right: 10px;

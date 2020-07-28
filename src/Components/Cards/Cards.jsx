@@ -8,7 +8,7 @@ const Cards = ({handlePurchase, pokemon}) => {
   return(
     <>
     <CardColumns className="Cards">
-      {pokemon.slice(0, 50).map((pokemon)=>
+      {pokemon.slice(0, 51).map((pokemon)=>
         (<Card key={pokemon.id} pokemon={pokemon} handlePurchase={handlePurchase} insideCart={false}/>)
       )}
     </CardColumns>

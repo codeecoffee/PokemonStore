@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {Search, FloatCart, Toggle} from '../index'
 import {Container, Row, Col }from 'react-bootstrap'
-
+import ThemeSwitcher from '../../ThemeSwitcher/ThemeSwitcher'
+// import * as themes from '../../themes'
+// import ThemeContext from '../../themes/context'
 import './style.css'
 import logo from '../../img/Header.png'
 
-const Header = ({purchase}) => {
+
+const Header = ({purchase, toggleTheme, theme}) => {
     //cart
     const [showCart, setShowCart] = useState(false)
     //
@@ -55,7 +58,7 @@ const Header = ({purchase}) => {
         />
       </div>
       <div className="bttnscontainer">
-        <button>Theme</button>
+        <ThemeSwitcher toggleTheme={toggleTheme}/>
         {sideBar}
           <Toggle click={openHandler}/>
       </div>
