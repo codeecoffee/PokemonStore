@@ -10,11 +10,11 @@ const App = () => {
 
   const [pokemon, setData] = useState([]);
  
-  //search
+  
   const search = (e) => {
     if(e.key === "Enter"){}
   }
-  //
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,10 +22,7 @@ const App = () => {
         `https://pokeapi.co/api/v2/type/${getTypeFromUrl()}`,
       );
       setData(result.data.pokemon);
-      /*
-      #E63946
-      #457B9D
-      */ 
+
       document.body.style = getTypeFromUrl() === "fire" ? 'background: #E63946;' : 'background: #457B9D;';
     };
     fetchData();
@@ -39,7 +36,7 @@ const App = () => {
 
   return (
     <>
-    {/* <ThemeSwitcher/> */}
+   
       <div className="container">
         <main>
           <Header purchase={purchase} />
@@ -50,5 +47,5 @@ const App = () => {
     </>
   )
 }
-//button onClick={()=>setShowCart(!showCart)}> toggle</button
+
 export default App;

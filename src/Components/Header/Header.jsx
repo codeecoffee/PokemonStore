@@ -6,9 +6,9 @@ import logo from '../../img/Header.png'
 
 
 const Header = ({purchase}) => {
-    //cart
+
     const [showCart, setShowCart] = useState(false)
-    //
+
     const openHandler = () =>{
       if(!showCart){
         setShowCart(true)
@@ -23,17 +23,13 @@ const Header = ({purchase}) => {
     if(showCart){
       sideBar=<FloatCart close={closeHandler} cartcontainer={"Cartcontainer"} purchase={purchase} insideCart={true}/>
     }
-    //
-    //cart
-
-    //Search
+   
       const [searched, setSearched] = useState("")
       const [filter, setFilter] = useState({
         name: []
       })
       const updateSearch=(newSearchTerm)=>{
         
-        console.log(newSearchTerm)
 
         const variable = {
       
@@ -42,7 +38,7 @@ const Header = ({purchase}) => {
         }
         setSearched(newSearchTerm)
       }
-    //
+
 
 
 

@@ -14,10 +14,3 @@ const FloatCartItem = ({pokemon}) =>(
 
 export default FloatCartItem
 
-
-/* 
-    <li>{pokemon.name}</li>
-    <li>{pokemon.price}</li>
-    <img alt={pokemon.name} src={pokemon.img}/> */
-
-

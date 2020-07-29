@@ -5,13 +5,13 @@
   /* height: 100vh; 100% Full-height */
   padding-left: 10px;
   padding-right: 10px;
-  position: fixed; /* Stay in place */
-  z-index: 200; /*puts it on top*/
-  right: -100%; /*Hides it*/
+  position: fixed; 
+  z-index: 200;
+  right: -100%; 
   width: 400px;
   color: white;
   background-color: #c5c3c6;
-  padding-top: 20px; /* Place content 60px from the top */
+  padding-top: 20px; 
   animation: slide-open 0.85s forwards;  
 
 }
@@ -39,11 +39,7 @@
 @keyframes slide-close{
   100%{ right: -100% }
 }
-/* .bttncontainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-} */
+
 
  .Cardscontainer{
   margin-top: 40px;
@@ -63,12 +59,7 @@
   background-color: white;
 }
 
-/* .teste-teste{
-  display: inherit;
-  flex-direction: row-reverse;
-  padding-bottom: 20px;
 
-} */
 
 .Cardscontainer ul li{
   padding-bottom: 10px;
@@ -89,9 +80,3 @@
   width: 100%;
   padding: 20px;
 }
-/*
-TODO: 
-fix closing FloatCart
-https://www.youtube.com/watch?v=17g0QZXRfQk
-
-*/

@@ -10,7 +10,7 @@ const Toggle =(props) => {
   return(
     <>
       <FaShoppingCart color="white" id="toggle" onClick={props.click} style={{backgroundColor: bgColor}}></FaShoppingCart>
-      {/* <button id="toggle" onClick={props.click}>Cart Toggle</button> */}
+     
     </>
   )
 }

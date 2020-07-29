@@ -25,7 +25,7 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
 
   return( 
     <div className="Cartcontainer">
-      {/* <div className="bttncontainer"> */}
+  
       <div className="closecontainer">
         <FaTimesCircle onClick={closeHandler}/>
       </div>
@@ -48,7 +48,7 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
       </div>
       <div className="checkout">
         <Button variant="success" onClick={() => setModalShow(true)}>Finalizar</Button>{' '}
-        {/* <button onClick={() => setModalShow(true)}>Finalizar</button> */}
+      
         <Modal
         show={modalShow}
         total={total}

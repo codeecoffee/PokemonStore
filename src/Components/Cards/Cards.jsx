@@ -12,9 +12,6 @@ const Cards = ({handlePurchase, pokemon}) => {
         (<Card key={pokemon.id} pokemon={pokemon} handlePurchase={handlePurchase} insideCart={false}/>)
       )}
     </CardColumns>
-    {/* <div className="loadmore">
-        <button>Load More </button>
-    </div> */}
     </>
   )
 }
