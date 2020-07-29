@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import {CardRows} from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 import { FaShoppingCart, FaTimesCircle } from 'react-icons/fa'
-import {FloatCartItem} from '../'
+import {FloatCartItem, Modal} from '../'
 import './style.css'
 
 const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
   const [cartContainerClass, setCartContainerClass] = useState(Cartcontainer)
-  // console.log("insideCart ->", insideCart)
+  const [modalShow, setModalShow] = useState(false);
+
   const closeHandler = (e) =>{
     e.preventDefault()
     setCartContainerClass("Cartcontainer close")
@@ -15,8 +17,9 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
     },500)
   }
 
-  var total = purchase.reduce((sum,item)=>(sum=sum+item.price),0)
+ var total = purchase.reduce((sum,item)=>(sum=sum+item.price),0)
   var quantityOfItems = purchase.length
+  
 
   return( 
     <div className="Cartcontainer">
@@ -27,19 +30,12 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
         <div className="carticoncontainer">
          <FaShoppingCart color="white" size="2rem"/>
         </div>
-        
-        {/* <button className="closebtn" onClick={closeHandler}> close</button> */}
-     
-      {/* </div> */}
 
       <div className="Cardscontainer">
         <ul>
           {purchase.map(pokemon =>(
               <>
                 <li><FloatCartItem pokemon={pokemon}/></li>
-                {/* <li>{pokemon.name}</li>
-                <li>{pokemon.price}</li>
-                <img alt={pokemon.name} src={pokemon.img}/> */}
               </>
             )
           )}
@@ -49,7 +45,16 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
         <h1>Total: R${total}</h1>
       </div>
       <div className="checkout">
-        <button>checkout</button>
+        <Button variant="success" onClick={() => setModalShow(true)}>Finalizar</Button>{' '}
+        {/* <button onClick={() => setModalShow(true)}>Finalizar</button> */}
+        <Modal
+        show={modalShow}
+        total={total}
+  
+        onHide={() =>{
+          setModalShow(false) 
+        }}
+        />
       </div>
 
     </div>

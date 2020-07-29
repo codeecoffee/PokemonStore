@@ -75,10 +75,6 @@ const App = () => {
     setPurchase([...purchase, {name, price, img}])
   }
 
-
-
-
-
   return (
     <>
     {/* <ThemeSwitcher/> */}

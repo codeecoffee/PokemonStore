@@ -10,7 +10,7 @@
   right: -100%; /*Hides it*/
   width: 400px;
   color: white;
-  background-color: gray;
+  background-color: #c5c3c6;
   padding-top: 20px; /* Place content 60px from the top */
   animation: slide-open 0.85s forwards;  
 
@@ -26,7 +26,7 @@
   padding-bottom: 30px;
 }
 .carticoncontainer{
-  background-color: #65cece;
+  background-color: #FCA311;
   border-radius: 50%;
   align-self: center;
   padding: 25px 25px;
@@ -76,9 +76,11 @@
 
 
 .checkout{
+  font-weight: 500;
   align-self: flex-end;
   width: 100%;
   margin: auto 5px;
+  padding-bottom: 10px;
 }
 .total{
   justify-content: flex-end;
