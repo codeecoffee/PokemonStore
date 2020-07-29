@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {Search, FloatCart, Toggle} from '../index'
 import {Container, Row, Col }from 'react-bootstrap'
-import ThemeSwitcher from '../../ThemeSwitcher/ThemeSwitcher'
-// import * as themes from '../../themes'
-// import ThemeContext from '../../themes/context'
 import './style.css'
 import logo from '../../img/Header.png'
 
 
-const Header = ({purchase, toggleTheme, theme}) => {
+const Header = ({purchase}) => {
     //cart
     const [showCart, setShowCart] = useState(false)
     //
@@ -46,6 +43,9 @@ const Header = ({purchase, toggleTheme, theme}) => {
         setSearched(newSearchTerm)
       }
     //
+
+
+
   return(
  
     <header className="container">
@@ -57,8 +57,8 @@ const Header = ({purchase, toggleTheme, theme}) => {
           refreshFunction={updateSearch}
         />
       </div>
-      <div className="bttnscontainer">
-        <ThemeSwitcher toggleTheme={toggleTheme}/>
+      <div className="bttnscontainer" >
+        
         {sideBar}
           <Toggle click={openHandler}/>
       </div>

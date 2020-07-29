@@ -3,6 +3,7 @@ import {CardRows} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import { FaShoppingCart, FaTimesCircle } from 'react-icons/fa'
 import {FloatCartItem, Modal} from '../'
+import getTypeFromUrl from '../../utils'
 import './style.css'
 
 const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
@@ -20,6 +21,7 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
  var total = purchase.reduce((sum,item)=>(sum=sum+item.price),0)
   var quantityOfItems = purchase.length
   
+  let bgColor = getTypeFromUrl() === "fire" ? "#E63946" : "#457B9D"
 
   return( 
     <div className="Cartcontainer">
@@ -27,7 +29,7 @@ const FloatCart = ({Cartcontainer, purchase, close, insideCart}) => {
       <div className="closecontainer">
         <FaTimesCircle onClick={closeHandler}/>
       </div>
-        <div className="carticoncontainer">
+        <div className="carticoncontainer" style={{backgroundColor: bgColor}}>
          <FaShoppingCart color="white" size="2rem"/>
         </div>
 
